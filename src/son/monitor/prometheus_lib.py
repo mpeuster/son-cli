@@ -46,7 +46,7 @@ prometheus_ip = 'localhost'
 #prometheus_ip = '172.17.0.1'
 # when sdk is started with docker-compose, we could use
 # prometheus_ip = 'prometheus'
-prometheus_port = '9090'
+prometheus_port = '9092'
 prometheus_REST_api = 'http://{0}:{1}'.format(prometheus_ip, prometheus_port)
 
 # translate metric names to the prometheus query
