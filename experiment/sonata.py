@@ -6,9 +6,6 @@ import time
 import yaml
 import logging
 
-MAX_VNF = 3
-REPETITIONS = 2
-
 
 def read_yaml(path):
     yml = None
@@ -69,18 +66,19 @@ def package_project():
     return abs(time.time() - t_start)
 
     
-def run():
+def run(max_vnf=3, repetitions=2):
     results = list()
     clear_temp()
     copy_project()
 
-    for n in range(1, MAX_VNF + 1):
+    for n in range(1, max_vnf + 1):
         if n > 1:
-            # add a VNF for next run
+            # add an additional VNF to the service
             add_vnf_to_project(n)
-        for r in range(0, REPETITIONS):
+        for r in range(0, repetitions):
             t = package_project()
-            results.append({"n_vnf": n,
+            results.append({"project": "SONATA",
+                            "n_vnf": n,
                             "r_id": r,
                             "t_pack_service": t,
                             "t_pack_vnfs": 0.0})
