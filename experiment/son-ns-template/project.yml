@@ -1,0 +1,8 @@
+descriptor_extension: yml
+package:
+  description: Packaging experiment service
+  maintainer: Manuel Peuster, Paderborn University
+  name: sonata-project-sample
+  vendor: eu.sonata-nfv.package
+  version: '0.1'
+version: '0.5'
